@@ -76,7 +76,23 @@ class movieGridViewController: UIViewController, UICollectionViewDataSource, UIC
 //        cell.posterView.image = poster
         return cell
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Find the selected movies
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)!
+        
+        let movie = movies[indexPath.item]
+        
+        
+        //pass the seleted movie to the details view
+        
+        let detailsGridViewController = segue.destination as! deteailsGridViewController
+        
+        detailsGridViewController.movie = movie
+        
     
+    
+    }
     /*
      // MARK: - Navigation
      
