@@ -12,7 +12,7 @@
         <!--MoviesViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="MoviesViewController" customClass="MoviesViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoviesViewController" id="BYZ-38-t0r" userLabel="MoviesViewController" customClass="MoviesViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,6 +65,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="BVp-W9-4VT"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zs9-me-36S"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -80,12 +84,42 @@
                     </view>
                     <navigationItem key="navigationItem" title="Movies Playing Now" id="0TK-Gc-l22"/>
                     <connections>
-                        <outlet property="tableView" destination="HKf-bt-N4G" id="a4N-HH-gIz"/>
+                        <outlet property="tableView" destination="HKf-bt-N4G" id="agH-LX-wfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-392" y="74"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Xpb-3F-Ihp">
+            <objects>
+                <viewController id="KUG-9k-sUf" customClass="searchViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yUH-rr-L6N">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kAN-TJ-vAy">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ts0-8c-5hA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kAN-TJ-vAy" firstAttribute="leading" secondItem="ts0-8c-5hA" secondAttribute="leading" id="Ek7-xU-lfP"/>
+                            <constraint firstItem="ts0-8c-5hA" firstAttribute="bottom" secondItem="kAN-TJ-vAy" secondAttribute="bottom" id="MWW-0L-mhy"/>
+                            <constraint firstItem="ts0-8c-5hA" firstAttribute="trailing" secondItem="kAN-TJ-vAy" secondAttribute="trailing" id="YuO-U6-MYr"/>
+                            <constraint firstItem="kAN-TJ-vAy" firstAttribute="top" secondItem="ts0-8c-5hA" secondAttribute="top" id="aka-17-AMk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableViewSearch" destination="kAN-TJ-vAy" id="D27-AH-2DZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3Z-R7-36a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="86"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cHM-Mc-0pS">
@@ -175,7 +209,7 @@
             <objects>
                 <viewController id="I4f-Vx-tMz" customClass="movieGridViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ne9-3b-Gbo">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ody-Wn-Bgs">
@@ -221,24 +255,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcI-xK-bjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="242"/>
+            <point key="canvasLocation" x="1157" y="232"/>
         </scene>
         <!--Deteails Grid View Controller-->
         <scene sceneID="J2v-2z-ypf">
             <objects>
                 <viewController id="FNh-H6-liJ" customClass="deteailsGridViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3fF-tY-M0B">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Je-GN-87l">
-                                <rect key="frame" x="0.0" y="47" width="390" height="263"/>
+                                <rect key="frame" x="0.0" y="91" width="390" height="263"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="263" id="RZY-Mp-ut0"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AL9-2v-qHQ">
-                                <rect key="frame" x="16" y="244" width="122" height="259"/>
+                                <rect key="frame" x="16" y="288" width="122" height="189"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="wxc-lx-2J8"/>
                                 </constraints>
@@ -250,7 +284,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNN-2I-cbb">
-                                <rect key="frame" x="16" y="511" width="358" height="251"/>
+                                <rect key="frame" x="16" y="485" width="358" height="251"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="251" id="DzP-aD-N7y"/>
                                 </constraints>
@@ -318,13 +352,10 @@
                         <viewLayoutGuide key="safeArea" id="fUG-YF-4Yn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <connections>
-                        <segue destination="I4f-Vx-tMz" kind="show" id="gU5-6Y-GA5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgX-dJ-0dD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331" y="272"/>
+            <point key="canvasLocation" x="2898" y="262"/>
         </scene>
         <!--SuperHero-->
         <scene sceneID="148-3a-fJy">
@@ -346,9 +377,6 @@
             <point key="canvasLocation" x="1081.5384615384614" y="-661.13744075829379"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gU5-6Y-GA5"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
